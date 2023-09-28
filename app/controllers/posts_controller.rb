@@ -5,6 +5,11 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def published
+    @posts = Post.where(published: true)
+    render :index
+  end
+
   def show; end
   def edit; end
 
